@@ -18,12 +18,12 @@ import java.sql.SQLException;
 /**
  * @author Rob Winch
  */
-public interface MessageRepository {
+public interface StudentRepository {
 
-	Iterable<Message> findAll() throws SQLException;
+	Iterable<Student> findAll() throws SQLException;
 
-	Message save(Message message) throws SQLException;
+	Student save(Student student) throws SQLException;
 
-	Message findMessage(Long id);
+	Student findStudent(Long id);
 
 }

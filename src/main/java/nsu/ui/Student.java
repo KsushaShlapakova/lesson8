@@ -20,7 +20,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 /**
  * @author Rob Winch
  */
-public class Message {
+public class Student {
 
 	private Long id;
 
