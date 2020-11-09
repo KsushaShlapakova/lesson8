@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+  layout:decorator="layout">
+  <head>
+    <title>Students : View all</title>
+  </head>
+  <body>
+    <h1 layout:fragment="header">Students : View all</h1>
+    <div layout:fragment="content" class="container">
+      <div class="pull-right">
+        <a href="form.html" th:href="@{/(form)}">Add student</a>
+       </div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>Last name</td>
+            <td>B-day</td>
+            <td>Group</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:if="${messages.empty}">
+            <td colspan="4">
+              No students
+            </td>
+          </tr>
+          <tr th:each="message : ${messages}">
+
+            <td>
+              <a href="view.html"
+                 th:href="@{'/' + ${message.id}}"
+                 th:text="${message.id}">
+                1
+              </a>
+            </td>
+            <td>
+              <a href="view.html"
+                  th:href="@{'/' + ${message.id}}"
+                  th:text="${message.name}">
+                The name
+              </a>
+            </td>
+            <td>
+              <a href="view.html"
+                 th:href="@{'/' + ${message.id}}"
+                 th:text="${message.surname}">
+                The Surname
+              </a>
+            </td>
+            <td>
+              <a href="view.html"
+                 th:href="@{'/' + ${message.id}}"
+                 th:text="${message.lastname}">
+                The last name
+              </a>
+            </td>
+            <td>
+              <a href="view.html"
+                 th:href="@{'/' + ${message.id}}"
+                 th:text="${message.bday}">
+                B-day
+              </a>
+            </td>
+            <td>
+              <a href="view.html"
+                 th:href="@{'/' + ${message.id}}"
+                 th:text="${message.group}">
+                Group
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
